@@ -1,0 +1,85 @@
+<Window xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:vm="using:EZGenerator.ViewModels"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				mc:Ignorable="d"
+				WindowState="Normal"
+				WindowStartupLocation="CenterScreen"
+				x:Class="EZGenerator.Views.MainWindow"
+				Icon="/Assets/icon.png"
+				Title="EZGenerator">
+	<Border Background="WhiteSmoke">
+				<Border Background="WhiteSmoke" Width="400" Height="250">
+					<TabControl>
+						<TabItem Header="NumberGenerator" >
+							<DockPanel>
+								<Border DockPanel.Dock="Bottom" Margin="15" Background="#c64dff" Height="45" Width="170" BoxShadow="0 0 25 5 #e7b3ff"
+												CornerRadius="20">
+                  
+									<Button Click="ClickRandomize"
+													DockPanel.Dock="Bottom" Background="#c64dff"
+													HorizontalAlignment="Center">
+													Рандомизировать
+									</Button>
+                </Border>
+
+
+								<Border Background="LightGray" Margin="15 15 15 0" CornerRadius="20" BoxShadow="0 0 25 5 Gray">
+									<Grid Background="LightGray" Margin="8">
+
+										<Grid.RowDefinitions>
+											<RowDefinition Height="35"/>
+											<RowDefinition Height="35"/>
+											<RowDefinition Height="35"/>
+										</Grid.RowDefinitions>
+
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition/>
+											<ColumnDefinition Width="110"/>
+										</Grid.ColumnDefinitions>
+
+										<TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"
+															 Text="Минимальное значение:"/>
+										<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"
+															 Text="Максимальное значение:"/>
+
+										<TextBlock x:Name="Result" VerticalAlignment="Center"
+															 HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0"/>
+
+										<TextBox x:Name="Min" Grid.Row="0" Grid.Column="1"/>
+										<TextBox x:Name="Max" Grid.Row="1" Grid.Column="1"/>
+
+									</Grid>
+								</Border>
+							</DockPanel>              
+						</TabItem>
+            
+					<TabItem Header="Coin Flip">
+            <DockPanel>
+
+              <Border DockPanel.Dock="Top" Background="LightGray" Margin="15 15 15 0" CornerRadius="20" BoxShadow="0 0 25 5 Gray" Height="110" Width="110">
+                <TextBlock x:Name="CoinResult" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+              </Border>
+              
+              <Border Margin="15" Background="#c64dff" Height="45" Width="170" BoxShadow="0 0 25 5 #e7b3ff"
+											CornerRadius="20">
+                
+                <Button DockPanel.Dock="Bottom" Background="#c64dff" 
+                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Click="ClickCoinFlip">
+												Подкинуть монетку
+                </Button>
+              
+              </Border>
+
+            </DockPanel>
+					</TabItem>
+            
+				</TabControl>
+					
+					
+				</Border>
+	</Border>
+	
+</Window>
